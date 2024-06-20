@@ -1,0 +1,81 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a; /* لون خلفية الصفحة */
+    color: #ffffff; /* لون النص الأبيض */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 90%; /* عرض الشات بنسبة مئوية */
+    max-width: 500px; /* حد أقصى لعرض الشات */
+    background-color: #333333; /* لون خلفية الشات */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#chat-box {
+    height: 300px; /* ارتفاع مربع الرسائل */
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: #292929; /* لون خلفية مربع الرسائل */
+}
+
+.input-container {
+    display: flex;
+    justify-content: flex-end; /* تحريك العناصر إلى اليمين */
+    margin-bottom: 10px; /* توسيع المسافة بين الخانة والرسائل */
+    padding-right: 20px; /* مسافة بين خانة الإدخال وحافة الشات */
+}
+
+#user-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #333333; /* لون خلفية حقل الإدخال */
+    color: #ffffff; /* لون النص الأبيض */
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: calc(100% - 100px); /* تحديد عرض الحقل بنسبة من عرض الشات */
+    text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* لون زر الإرسال */
+    color: #ffffff; /* لون النص الأبيض */
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* تغيير لون زر الإرسال عند التحويم */
+}
+
+/* وسائط للتكيف مع الشاشات الصغيرة */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95%; /* تعديل عرض الشات لشاشات أصغر */
+    }
+
+    #user-input {
+        width: calc(100% - 80px); /* تعديل عرض حقل الإدخال لشاشات أصغر */
+    }
+}
+
+.user-message {
+    background-color: #007bff; /* لون خلفية رسائل المستخدم */
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #4CAF50; /* لون خلفية رسائل الروبوت */
+    align-self: flex-start;
+}
